@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="ISO-8859-1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<!-- Bootstrap in the head-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <title>Juicee Registration</title>
+ 
+  </head>
+	
+	<body>
+		<div class="root">
+
+		<main id="main" style="display: flex">
+		
+    	<div class="container text-center" >
+			<div>
+     		<h1>User Registration</h1>
+			<hr>
+			<h4>Please Register Below.</h4>
+			</div>
+	
+			<form action="/data" method="POST" style="max-width: 450px; margin: 0 auto;">
+				 <div class="m-3">
+					<div class="form-group row">
+						<label class="col-form-label col-3"co>E-mail: </label>
+						<div class="col-8">
+							<input type="email" id="email" placeholder="Enter your E-mail here" class="form-control col-form-label col-4">
+						</div>
+					
+					</div>
+					<div>
+						<div class="form-group row">
+							<label class="col-form-label col-3"co>Password: </label>
+							<div class="col-8">
+								<input type="password" id="password" placeholder="Enter a password (max 10 chars)" th:field="*{password}" required minlength="6" maxlength="10"  class="form-control col-form-label col-4" />
+							</div>
+						
+						</div>
+
+						<div>
+							<div class="form-group row">
+								<label class="col-form-label col-3"co>First Name: </label>
+								<div class="col-8">
+									<input type="text" id="firstName" placeholder="Enter your First Name"  class="form-control col-form-label col-4"/>
+								</div>
+							
+							</div>
+							<div>
+								<div class="form-group row">
+									<label class="col-form-label col-3"co>Last Name: </label>
+									<div class="col-8">
+										<input type="text" id="lastName" placeholder="Enter your Surname here" class="form-control col-form-label col-4" />
+									</div>
+								
+								</div>
+								<br>
+
+						<div>
+							<buton type="submit" class="btn btn-primary">Sign Up</buton>
+						</div>
+					
+				</div>
+
+
+			</form>
+		
+		</div>
+
+    </div>
+		<!-- Bootstrap for the body JS Popper etc-->
+		<script src="./assets/js/fetchUsers.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	</body>
+</html>

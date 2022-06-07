@@ -1,14 +1,13 @@
 package com.qa.demo.dao;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 //===================== Imports Above this line
@@ -24,15 +23,21 @@ import lombok.NoArgsConstructor;
 
 public class Ingredients {
 
+	// ATTRIBUTES PRIVATE
 	// =====================ID IMPORTANT
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
-	// ATTRIBUTES PRIVATE
 	private long id;
+	@Column(length = 30, nullable = false, unique = true)
 	private String name;
 	private String description;
+	@Column(nullable = false)
 	private String imgUrl;
+	
+	// X REFERENCE FOR DATABSES - CATEGORY !
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private Category category;
 
 	// Constructor
 	public Ingredients(long id, String name, String imgUrl, String description) {
@@ -42,14 +47,6 @@ public class Ingredients {
 		this.imgUrl = imgUrl;
 		this.description = description;
 	}
-
-//		@OneToMany(mappedBy = "ingredients")
-//		@OnDelete(action = OnDeleteAction.CASCADE)
-//		private List<Recipe> recipes = new ArrayList<>();
-
-	// Many to One Target Recipe.class
-//		@ManyToOne(targetEntity = Recipe.class)
-//		private Recipe Recipe;
 
 	// Getters & Setters Taken Care of By @Data (Included in Pom (Lombok)
 	// (springdoc)))
