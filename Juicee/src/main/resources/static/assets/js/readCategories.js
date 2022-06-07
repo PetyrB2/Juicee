@@ -24,4 +24,4 @@ function showAllCats({ data }) {
 };
 
 fetchData();
-
+showAllCats();

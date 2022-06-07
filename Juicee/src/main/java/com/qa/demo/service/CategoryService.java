@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.qa.demo.dao.Category;
 import com.qa.demo.persistence.repo.CategoryRepo;
+import com.qa.demo.user.Role;
 
 @Service
 public class CategoryService {
@@ -19,9 +20,8 @@ private CategoryRepo repo;
 	}
 
 	
-	
-	
 	// ######### CRUD FOLLOWS #########
+	
 	// CREATE
 	public Category create(Category Category) {
 		return this.repo.save(Category);
@@ -30,15 +30,17 @@ private CategoryRepo repo;
 	public List<Category> readAll() {
 		return this.repo.findAll();
 	}
-	// YO deee UPDATE
-	public List<Category> update() {
-	// add here
-		return this.repo.findAll();
+	//UPDATE
+	public Category update(Category Category, Long id) throws Exception {
+		Category updateFromRepo = this.repo.findById(id).orElseThrow(Exception::new);
+		updateFromRepo.setName(Category.getName());
+
+		return this.repo.saveAndFlush(updateFromRepo);
 	}
-	// DELETE
+	
+	//DELETE
 	public List<Category> delete(Long id) {
 		this.repo.deleteById(id);
 			return this.repo.findAll();
 	}
-// OHER STUFF#
 }

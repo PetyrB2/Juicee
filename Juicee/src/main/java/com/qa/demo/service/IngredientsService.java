@@ -15,17 +15,32 @@ public class IngredientsService {
 		this.repo = repo;
 	}
 
+	// CRUD FOLLOWS
 	
-	public List<Ingredients> readAll() {
-		return this.repo.findAll();
-	}
-	
+	// CREATE
 	public Ingredients create(Ingredients ingredients) {
 		return this.repo.save(ingredients);
 	}
 
-	public Ingredients update(Ingredients ingredients) {
-		//SOME UPDATE STUFF HERE
-		return this.repo.save(ingredients);
+	// READ
+	public List<Ingredients> readAll() {
+		return this.repo.findAll();
 	}
+	
+	// UPDATE
+	public Ingredients update(Ingredients Ingredients, Long id) throws Exception {
+		Ingredients updateFromRepo = this.repo.findById(id).orElseThrow(Exception::new);
+		updateFromRepo.setName(Ingredients.getName());
+		updateFromRepo.setDescription(Ingredients.getDescription());
+		updateFromRepo.setImgUrl(Ingredients.getImgUrl());
+
+		return this.repo.saveAndFlush(updateFromRepo);
+	}
+	
+	// DELETE
+	public List<Ingredients> delete(Long id) {
+		this.repo.deleteById(id);
+			return this.repo.findAll();
+	}
+	
 }

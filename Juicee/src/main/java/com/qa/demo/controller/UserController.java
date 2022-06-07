@@ -1,11 +1,11 @@
 package com.qa.demo.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.qa.demo.persistence.repo.UserRepo;
 import com.qa.demo.service.UserService;
 import com.qa.demo.user.User;
@@ -49,39 +48,40 @@ public class UserController {
 		}
 		
 //		// UPDATE (by ID)
-//		@PutMapping("/update/{id}")
-//		public ResponseEntity<User> update(@PathVariable long id, @RequestBody User User) throws Exception {
-//			return new ResponseEntity<>(this.service.update(User), HttpStatus.ACCEPTED);
-//		}
-//		
+		@PutMapping("/update/{id}")
+		public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User User) throws Exception {
+			return new ResponseEntity<User>(this.service.update(User, id), HttpStatus.ACCEPTED);
+		}
+		
 //		// DELETE (by ID)
-//		@DeleteMapping("/delete/{id}")
-//		public ResponseEntity<Boolean> delete(@PathVariable Long id) throws Exception {
-//			return new ResponseEntity<>(this.service.delete(id), HttpStatus.NO_CONTENT);
-//
-//		}
+		@DeleteMapping("/delete/{id}")
+		public ResponseEntity<Boolean> delete(@PathVariable Long id) throws Exception {
+			return this.service.delete(id) != null ? new ResponseEntity<>(HttpStatus.NO_CONTENT)
+					: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+
+		}
 		
 		
-//		// Other Mapping
-//		@GetMapping("/")
-//		public String homeRoot() {
-//			return "index.html";
-//		}
-//		
-//		@GetMapping("/home")
-//		public String home() {
-//			return "index.html";
-//		}
-//		
-//		@GetMapping("/register")
-//		public String showRegister(Model model) {
-//			model.addAttribute("user", new User());
-//			return "register.html";
-//		}
-//		@PostMapping("/process_register")
-//		public String processReg(User user) {
-//			repo.save(user);
-//			
-//			return "success.html";
-//		}
+		// Other Mapping
+		@GetMapping("/")
+		public String homeRoot() {
+			return "index.html";
+		}
+		
+		@GetMapping("/home")
+		public String home() {
+			return "index.html";
+		}
+		
+		@GetMapping("/register")
+		public String showRegister(Model model) {
+			model.addAttribute("user", new User());
+			return "register.html";
+		}
+		@PostMapping("/process_register")
+		public String processReg(User user) {
+			repo.save(user);
+			
+			return "success.html";
+		}
 }

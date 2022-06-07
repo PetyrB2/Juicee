@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 //import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.PutMapping;
@@ -49,10 +51,11 @@ public class IngredientsController {
 //			return new ResponseEntity<>(this.service.update(Ingredients), HttpStatus.ACCEPTED);
 //		}
 //
-//		// DELETE (by ID)
-//		@DeleteMapping("/delete/{id}")
-//		public ResponseEntity<Boolean> delete(@PathVariable Long id) throws Exception {
-//			return new ResponseEntity<>(this.service.delete(id), HttpStatus.NO_CONTENT);
-//
-//		}
+		// DELETE (by ID)
+		@DeleteMapping("/delete/{id}")
+		public ResponseEntity<Boolean> delete(@PathVariable Long id) throws Exception {
+			return this.service.delete(id) != null ? new ResponseEntity<>(HttpStatus.NO_CONTENT)
+					: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+
+		}
 }
