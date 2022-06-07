@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap in the head-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+	
+	<style>
+			hr { 
+			display: block;
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			margin-left: auto;
+			margin-right: auto;
+			border-style: inset;
+			border-width: 1px;
+			align: center;
+			width: 50%;
+			} 
+	  </style>
+	
+	<title>Categories</title>
+  </head>
+	
+	<body>
+		<main id="main" style="display: flex">
+		
+    	<div class="container text-center">
+			<div>
+				<hr>
+     		<h1>Categories</h1>	
+				<hr>
+				<a href="readCategories.html"><button type="button" class="btn btn-primary">List Categories</button> </a>
+			
+				<a href="updateCategories.html"><button type="button" class="btn btn-secondary">Update Categories</button> </a>
+				
+				<a href="deleteCategories.html"><button type="button" class="btn btn-dark">Delete Categories</button> </a>
+				<hr
+			 <h3>Add a New Category</h3>
+			 <hr>
+				<div class="root">
+					<form method="post" style="max-width: 450px; margin: 0 auto;">
+						<div class="m-3">
+						<div class="form-group row">
+							<label class="col-form-label col-3"co>Category: </label>
+							<div class="col-8">
+								<input type="name" id="name" placeholder="Enter a Category Name.." class="form-control col-form-label col-4">
+							</div>
+						</div>
+					
+						<br>
+
+						<div>
+							<button type="submit" class="btn btn-primary">Add a Category</button>
+						</div>
+					
+				</div>
+
+
+			</form>
+		
+		</div>
+
+    </div>
+		<!-- Bootstrap for the body JS Popper etc-->
+		<script src="./assets/js/categories.js"></script>
+		
+
+		</div>
+	</body>
+</html>
+ 
