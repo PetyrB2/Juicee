@@ -20,13 +20,14 @@ import lombok.NoArgsConstructor;
 	//===================== BEGIN of Class 
 
 	public class Recipe {
-		public Recipe(long id, String name, String description, String imgUrl, String howto) {
+		public Recipe(long id, String name, String description, String imgUrl, String howto, Ingredients ingredients) {
 			super();
 			this.id = id;
 			this.name = name;
 			this.description = description;
 			this.howto = howto;
 			this.imgUrl = imgUrl;
+			this.ingredients = ingredients;
 		}
 
 		// =====================ID IMPORTANT
@@ -42,9 +43,9 @@ import lombok.NoArgsConstructor;
 		private String imgUrl;
 
 		
-//		// Many to One Target Recipe.class
-//		@ManyToOne(targetEntity = Ingredients.class)
-//		private Ingredients Ingredients;
+		// Many to One Target Recipe.class
+		@ManyToOne(targetEntity = Ingredients.class)
+		private Ingredients ingredients;
 
 		// Getters & Setters Taken Care of By @Data (Included in Pom (Lombok
 		// (springdoc)))

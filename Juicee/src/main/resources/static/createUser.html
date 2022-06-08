@@ -40,7 +40,7 @@
 		}
 	</style>
 
-	<title>Update a Category</title>
+	<title>Users</title>
 </head>
 
 <body>
@@ -49,43 +49,44 @@
 		<div class="container text-center">
 			<div>
 				<hr>
-				<h1>Categories</h1>
+				<h1>Users</h1>
 				<hr>
-				<a href="updateCategories.html"><button type="button" class="btn btn-primary">Update Categories</button>
-				</a>
-
-				<a href="createCategory.html"><button type="button" class="btn btn-secondary">Add Categories</button>
-				</a>
-
-				<a href="deleteCategories.html"><button type="button" class="btn btn-dark">Delete Categories</button>
-				</a>
-				<hr>
-				<h3>Update a Category</h3>
+				<h3>Create a New User</h3>
 				<hr2>
 					<div class="root">
 						<div>
 
+							
 							<div>
-								<br>
-								<input id="idInput" placeholder="Update Category ID">
-								<input id="catname" placeholder="Update Category Name">
-								
-								<br>
+								<label name="email">Email: </label>
+								<input id="email">
+							</div>
+							
+							<div>
+								<label name="password">Password: </label>
+								<input id="password">
+							</div>
+							
+							<div>
+								<label name="firstName">First Name: </label>
+								<input id="firstName">
+							</div>
+
+							<div>
+								<label name="lastName">Last Name: </label>
+								<input id="lastName">
 							</div>
 							<br>
-							<button name="button" id="IdButton" id="submit" class="btn btn-success">Click to Update </button>
-							
-							
-							<button name="button2" id="refresh" class="btn btn-secondary"
-								onClick="window.location.reload();">Refresh</button>
+							<button name="button" id="submit" class="btn btn-info" >Add a User</button>
+
 						</div>
 						<br>
-						<hr>
-						<h3>List of Categories</h3>
+						<br>
+						<h3>List of Users</h3>
 						<hr>
 					</div>
 					<!-- My JS Script to fetch and show data-->
-					<script src="./assets/js/updateCategory.js"></script>
+					<script src="./assets/js/createUser.js"></script>
 
 
 			</div>
