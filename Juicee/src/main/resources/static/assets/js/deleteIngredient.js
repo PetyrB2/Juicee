@@ -1,29 +1,5 @@
 // A Javascript for DELETING A CATEGORY
 
-
-// ================== DELETE FUNCTION =======================
-
-const idInput = document.getElementById("idInput");
-const idButton = document.getElementById("IdButton");
-
-
-let deleteCat = (id) => {
-  fetch(`http://localhost:8080/Category/delete/${id}`,{
-    method:'DELETE'
-
-})
-
-}
-
-
-IdButton.onclick = () => deleteCat(idInput.value);
-//===========================DELETE ENDS =====================
-
-
-
-
-
-
 // ================= RETRIEVE THE CATEGORIES =====================
 // Function to GET CATEGORIES from the db
 function fetchData() {
@@ -63,10 +39,25 @@ function showAllFacts(data) {
   }
 }
 
-
 fetchData();
 
+// ================== DELETE FUNCTION =======================
 
+const idInput = document.getElementById("idInput");
+const idButton = document.getElementById("IdButton");
+
+
+let deleteCat = (id) => {
+  fetch(`http://localhost:8080/Category/delete/${id}`,{
+    method:'DELETE'
+
+})
+
+}
+
+
+IdButton.onclick = () => deleteCat(idInput.value);
+//===========================DELETE ENDS =====================
 
 
 

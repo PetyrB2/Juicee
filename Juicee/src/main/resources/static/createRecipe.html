@@ -32,15 +32,9 @@
 			border-width: 1px;
 			width: 70%;
 		}
-
-		textarea {
-			background: url(images/benice.png) center center no-repeat;
-			/* This ruins default border */
-			border: 1px solid #888;
-		}
 	</style>
 
-	<title>Update a Category</title>
+	<title>Ingredients</title>
 </head>
 
 <body>
@@ -49,43 +43,43 @@
 		<div class="container text-center">
 			<div>
 				<hr>
-				<h1>Categories</h1>
+				<h1>Recipes</h1>
 				<hr>
-				<a href="updateCategories.html"><button type="button" class="btn btn-primary">Update Categories</button>
-				</a>
-
-				<a href="createCategory.html"><button type="button" class="btn btn-secondary">Add Categories</button>
-				</a>
-
-				<a href="deleteCategories.html"><button type="button" class="btn btn-dark">Delete Categories</button>
-				</a>
-				<hr>
-				<h3>Update a Category</h3>
+				<h3>Create a New Recipe</h3>
 				<hr2>
 					<div class="root">
 						<div>
-
 							<div>
-								<br>
-								<input id="idInput" placeholder="Update Category ID">
-								<input id="catname" placeholder="Update Category Name">
+								<label name="name">Recipe Name: </label>
+								<input id="name">
+							
+								<label name="description">Description: </label>
+								<input id="description">
+						
+								<label name="howto">Instructions: </label>
+								<input id="howto">
+						
+								<label name="imgUrl">Url of a Picture : </label>
+								<input id="imgUrl">
 								
 								<br>
+								<label name="imgUrl">Pick the Ingredients : </label>
+								<input id="ingredients">
+								<label name="imgUrl">Pick more Ingredients : </label>
+								<input id="ingredients">
+
 							</div>
 							<br>
-							<button name="button" id="IdButton" id="submit" class="btn btn-success">Click to Update </button>
-							
-							
-							<button name="button2" id="refresh" class="btn btn-secondary"
-								onClick="window.location.reload();">Refresh</button>
+							<button name="button" id="submit" class="btn btn-info">Add</button>
+
 						</div>
 						<br>
-						<hr>
-						<h3>List of Categories</h3>
+						<br>
+						<h3>List of Recipes</h3>
 						<hr>
 					</div>
 					<!-- My JS Script to fetch and show data-->
-					<script src="./assets/js/updateCategory.js"></script>
+					<script src="./assets/js/createRecipe.js"></script>
 
 
 			</div>
