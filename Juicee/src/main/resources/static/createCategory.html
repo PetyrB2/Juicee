@@ -40,7 +40,7 @@
 		}
 	</style>
 
-	<title>Update a Category</title>
+	<title>Create a Category</title>
 </head>
 
 <body>
@@ -54,28 +54,24 @@
 				<a href="updateCategories.html"><button type="button" class="btn btn-primary">Update Categories</button>
 				</a>
 
-				<a href="createCategory.html"><button type="button" class="btn btn-secondary">Add Categories</button>
+				<a href="readCategories.html"><button type="button" class="btn btn-secondary">List Categories</button>
 				</a>
 
 				<a href="deleteCategories.html"><button type="button" class="btn btn-dark">Delete Categories</button>
 				</a>
 				<hr>
-				<h3>Update a Category</h3>
+				<h3>Add a New Category</h3>
 				<hr2>
 					<div class="root">
 						<div>
 
 							<div>
 								<br>
-								<input id="idInput" placeholder="Update Category ID">
-								<input id="catname" placeholder="Update Category Name">
-								
+								<input id="name" placeholder="Add a New Category here">
 								<br>
 							</div>
 							<br>
-							<button name="button" id="IdButton" id="submit" class="btn btn-success">Click to Update </button>
-							
-							
+							<button name="button" id="submit" class="btn btn-success">Add a Category</button>
 							<button name="button2" id="refresh" class="btn btn-secondary"
 								onClick="window.location.reload();">Refresh</button>
 						</div>
@@ -85,7 +81,7 @@
 						<hr>
 					</div>
 					<!-- My JS Script to fetch and show data-->
-					<script src="./assets/js/updateCategory.js"></script>
+					<script src="./assets/js/createCategory.js"></script>
 
 
 			</div>

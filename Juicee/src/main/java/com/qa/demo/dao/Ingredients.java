@@ -35,17 +35,18 @@ public class Ingredients {
 	private String imgUrl;
 	
 	// X REFERENCE FOR DATABSES - CATEGORY !
-	@ManyToOne
+	@ManyToOne(targetEntity = Category.class)
 	@JoinColumn(name = "category_id")
 	private Category category;
 
 	// Constructor
-	public Ingredients(long id, String name, String imgUrl, String description) {
+	public Ingredients(long id, String name, String imgUrl, String description, Category category) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.imgUrl = imgUrl;
 		this.description = description;
+		this.category = category;
 	}
 
 	// Getters & Setters Taken Care of By @Data (Included in Pom (Lombok)
