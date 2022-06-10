@@ -2,6 +2,7 @@ package com.qa.demo.user;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.qa.demo.dao.Category;
 
 import lombok.Data;
 
@@ -48,21 +52,23 @@ public class User {
 	}
 	
 	// Constructor for User
-	public User(String email, String password, String firstName, String lastName) {
+	public User(String email, String password, String firstName, String lastName, Role role) {
 		super();
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+//		this.role = role;
 	}
 	
-//	// Database bit follows - Pay ATTENTION !!!
+	// Database bit follows - Pay ATTENTION !!!
+	
 //	@ManyToMany(cascade = CascadeType.PERSIST)
 //	@JoinTable(
 //			name = "user_role",
 //			joinColumns = @JoinColumn(name = "user_id"),
 //			inverseJoinColumns = @JoinColumn(name = "role_id")
 //			)
-//	// Special Element (Foreign Key)
-//	private Set<Role> roles = new HashSet<>();
+//	// Foreign Key
+//	private Role role;
 }

@@ -37,11 +37,28 @@
 	<body>
 		<main id="main" style="display: flex">
 		
-    	<div class="container text-center">
+    	<div class="container text-center" id="root">
 			<div>
 				<hr>
      		<h1>Ingredients</h1>	
-				<hr>
+			 <hr>
+			 <a href="updateIngredients.html"><button type="button" class="btn btn-primary">Update Ingredients</button>
+			 </a>
+
+			 <a href="createIngredient.html"><button type="button" class="btn btn-secondary">Add Ingredients</button>
+			 </a>
+
+			 <a href="deleteIngredient.html"><button type="button" class="btn btn-dark">Delete Ingredients</button>
+			 </a>
+			 <div class="Zebra">
+
+			</div>
+			<div class="QCat">
+				<h4>Query By CATE|GORY :</h4>
+				<hr2>
+				</hr2>
+			</div>
+				
 				<h3>Ingredients List</h3>
 			 <hr2>
              <div class="root">
@@ -49,9 +66,7 @@
     		</div>
 		<!-- My JS Script to fetch and show data-->
 		<script src="./assets/js/readIngredients.js"></script>
-		
-
-		</div>
+			</div>
 	
 	</div>
 	</body>

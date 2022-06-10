@@ -34,17 +34,20 @@ public class CategoryRepoTests {
 
 		Category existCategory = entityManager.find(Category.class, savedCategory.getName());
 
-		// Assertion by Email verification
+		// Assertion by Name verification
 		assertThat(existCategory.getName()).isEqualTo(category.getName());
 	}
-
+//
 	@Test
 	public void testCategoryAssertId() {
 
 		// save the user using crud repository
-		Category savedCategory = repo.save(new Category("Vegetable"));
+		Category savedCategory = repo.save(new Category("A"));
 
 		// Assertion by id not 0
 		assertThat(savedCategory.getId()).isGreaterThan(0);
 	}
+	
+	
+	
 }

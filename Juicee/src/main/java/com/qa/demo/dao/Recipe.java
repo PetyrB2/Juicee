@@ -28,6 +28,7 @@ import lombok.NoArgsConstructor;
 			this.howto = howto;
 			this.imgUrl = imgUrl;
 			this.ingredients = ingredients;
+//			this.quantity = quantity;
 		}
 
 		// =====================ID IMPORTANT
@@ -47,14 +48,12 @@ import lombok.NoArgsConstructor;
 		@ManyToOne(targetEntity = Ingredients.class)
 		private Ingredients ingredients;
 
+		// Database bit follows - Pay ATTENTION !!!
+//
+//		@ManyToOne(targetEntity = Quantity.class)
+//		@JoinColumn(name = "quantity_id")
+//
+//		private Quantity quantity;
 		// Getters & Setters Taken Care of By @Data (Included in Pom (Lombok
 		// (springdoc)))
 }
-
-	////		@ManyToOne(targetEntity = Ingredient.class)
-////		@JsonBackReference
-////		private Ingredient ingredient;
-	// Many to One Target Driver.class
-//	@ManyToOne(targetEntity = Driver.class)
-//	private Driver driver;
-//}

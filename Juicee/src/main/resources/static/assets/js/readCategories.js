@@ -1,5 +1,6 @@
-// A Javascript for POSTING User Registration Data back to the mySQL
+//###################  A Javascript for DELETING A CATEGORY ####################
 
+// ================= RETRIEVE THE CATEGORIES =====================
 // Function to GET CATEGORIES from the db
 function fetchData() {
     fetch('http://localhost:8080/Category/read')
@@ -10,9 +11,12 @@ function fetchData() {
                 showAllFacts(data)
             })
         });
-}
-
-function showAllFacts(data) {
+  }
+  
+  
+  
+  //===========================SHOW THE DATA=====================
+  function showAllFacts(data) {
     console.table(data)
     const rootElement = document.getElementsByClassName('root')[0];
     for (let i = 0; i < data.length; i++) {
@@ -20,16 +24,43 @@ function showAllFacts(data) {
         const p = document.createElement('p');
         const hr = document.createElement('hr');
         const br = document.createElement('br');
-
+        //const myCheckBox = document.createElement('input type="checkbox"');
+        
         p.append(document.createTextNode(`ID: ${data[i][`id`]}`));
+        // p.appendChild(myCheckBox);
         p.appendChild(br);
-        p.append(document.createTextNode(`Name: ${data[i][`name`]}`));
+        p.append(document.createTextNode(`Category: ${data[i][`name`]}`));
         p.appendChild(hr);
-
-
+  
+  
         newDiv.appendChild(p);
+        newDiv.appendChild(hr);
         rootElement.appendChild(newDiv);
     }
-}
-fetchData();
-// showAllFacts();
+  }
+  
+  
+  fetchData()
+  
+  // ================== DELETE FUNCTION =======================
+  const IdInput = document.getElementById("IdInput");
+  const ButtonId = document.getElementById("ButtonId");
+  
+  let deleteCat = (id) => {
+    fetch(`http://localhost:8080/Category/delete/${id}`,{
+      method:'DELETE'
+    
+  })
+  
+  }
+  
+  ButtonId.onclick = () => deleteCat(IdInput.value);
+  //===========================DELETE ENDS =====================
+  
+  
+  
+  
+  
+  
+  
+  
