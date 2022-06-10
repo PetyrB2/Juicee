@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- For Mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Bootstrap in the head-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+
+	<style>
+		hr {
+			display: block;
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			margin-left: auto;
+			margin-right: auto;
+			border-style: inset;
+			border-width: 1px;
+			width: 50%;
+		}
+
+		hr2 {
+			display: block;
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			margin-left: auto;
+			margin-right: auto;
+			border-style: inset;
+			border-width: 1px;
+			width: 70%;
+		}
+
+		textarea {
+			background: url(images/benice.png) center center no-repeat;
+			/* This ruins default border */
+			border: 1px solid #888;
+		}
+
+		img {
+			margin-left: auto;
+			margin-right: auto;
+			border-radius: 25%;
+			padding: 5px;
+			width: 250px;
+
+		}
+	</style>
+
+	<title>Ingredients</title>
+</head>
+
+<body>
+	<main id="main" style="display: flex">
+
+		<div class="container text-center">
+			<div>
+				<hr>
+				<h1>Ingredients</h1>
+				<hr>
+				<a href="updateIngredients.html"><button type="button" class="btn btn-primary">Update
+						Ingredients</button>
+				</a>
+
+				<a href="readIngredients.html"><button type="button" class="btn btn-secondary">List Ingredients</button>
+				</a>
+
+				<a href="deleteIngredient.html"><button type="button" class="btn btn-dark">Delete Ingredients</button>
+				</a>
+				<hr>
+				<h3>Create a New Ingredient</h3>
+				<hr2>
+					<div class="root">
+						<div>
+							<div>
+								<label name="name">Name: </label>
+								<input id="name">
+								<br>
+								<label name="description">Description: </label>
+								<input id="description">
+								<br>
+								<label name="imgUrl">Image URL: </label>
+								<input id="imgUrl">
+								<br>
+								<div>
+									<label name="catlabel">Category Id: </label>
+									<select id="catlist" class="options">
+
+									</select>
+								</div>
+							</div>
+							<!-- DIV FOR THE LEGEND-->
+							<div class="legend">
+
+							</div>
+
+
+							<br>
+							<button name="button" id="submit" class="btn btn-info">Add</button>
+
+						</div>
+						<hr>
+					</div>
+					<!-- My JS Script to fetch and show data-->
+					<script src="./assets/js/createIngredient.js"></script>
+
+
+
+			</div>
+		</div>
+</body>
+
+</html>

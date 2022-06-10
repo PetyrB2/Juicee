@@ -1,0 +1,36 @@
+body {
+
+
+-webkit-animation: colorchange 90s infinite;
+
+animation: colorchange 90s infinite;
+
+}
+
+@-webkit-keyframes colorchange {
+
+0% {background: #00FA9A; ##191970;}
+
+25% {background: blue; yellow;}
+
+50% {background: orange; yellow;}
+
+75% {background: #00FA9A;}
+
+100% {background: blue;}
+
+}
+
+@keyframes colorchange {
+
+0% {background: 00FA9A;}
+
+25% {background: #bd8d52;}
+
+50% {background: blue;}
+
+75% {background: purple;}
+
+100% {background: 00FA9A;}
+}
+}
