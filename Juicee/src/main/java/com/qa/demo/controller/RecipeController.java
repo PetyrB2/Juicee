@@ -1,6 +1,8 @@
 package com.qa.demo.controller;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.qa.demo.dao.Recipe;
 import com.qa.demo.service.RecipeService;
 
@@ -22,6 +25,7 @@ public class RecipeController {
 
 		private RecipeService service;
 		
+		@Autowired
 		public RecipeController(RecipeService service) {
 			this.service = service;
 		}

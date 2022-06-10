@@ -9,45 +9,7 @@
 	<!-- Bootstrap in the head-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
 		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-
-	<style>
-		hr {
-			display: block;
-			margin-top: 0.5em;
-			margin-bottom: 0.5em;
-			margin-left: auto;
-			margin-right: auto;
-			border-style: inset;
-			border-width: 1px;
-			width: 50%;
-		}
-
-		hr2 {
-			display: block;
-			margin-top: 0.5em;
-			margin-bottom: 0.5em;
-			margin-left: auto;
-			margin-right: auto;
-			border-style: inset;
-			border-width: 1px;
-			width: 70%;
-		}
-
-		textarea {
-			background: url(images/benice.png) center center no-repeat;
-			/* This ruins default border */
-			border: 1px solid #888;
-		}
-
-		img {
-			margin-left: auto;
-			margin-right: auto;
-			border-radius: 25%;
-			padding: 5px;
-			width: 250px;
-
-		}
-	</style>
+	<link rel="stylesheet" href="./assets/css/style.css" />
 
 	<title>Ingredients</title>
 </head>
@@ -57,6 +19,7 @@
 
 		<div class="container text-center">
 			<div>
+				<a href="index.html"><button type="button" class="btn btn-success">Main Page</button></a>
 				<hr>
 				<h1>Ingredients</h1>
 				<hr>
@@ -72,6 +35,7 @@
 				<hr>
 				<h3>Create a New Ingredient</h3>
 				<hr2>
+
 					<div class="root">
 						<div>
 							<div>
@@ -99,7 +63,8 @@
 
 							<br>
 							<button name="button" id="submit" class="btn btn-info">Add</button>
-
+							<button name="button2" id="refresh" class="btn btn-secondary"
+								onClick="window.location.reload();">Refresh</button>
 						</div>
 						<hr>
 					</div>
@@ -109,7 +74,13 @@
 
 
 			</div>
+			<footer>
+
+				Banana:
+				https://th-thumbnailer.cdn-si-edu.com/4Nq8HbTKgX6djk07DqHqRsRuFq0=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/d5/24/d5243019-e0fc-4b3c-8cdb-48e22f38bff2/istock-183380744.jpg
+			</footer>
 		</div>
+
 </body>
 
 </html>

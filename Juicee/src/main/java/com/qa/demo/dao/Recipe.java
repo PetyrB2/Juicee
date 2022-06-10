@@ -1,11 +1,16 @@
 package com.qa.demo.dao;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 	//===================== Imports Above this line
@@ -20,7 +25,7 @@ import lombok.NoArgsConstructor;
 	//===================== BEGIN of Class 
 
 	public class Recipe {
-		public Recipe(long id, String name, String description, String imgUrl, String howto, Ingredients ingredients) {
+		public Recipe(long id, String name, String description, String imgUrl, String howto, List<Ingredients> ingredients) {
 			super();
 			this.id = id;
 			this.name = name;
@@ -44,9 +49,10 @@ import lombok.NoArgsConstructor;
 		private String imgUrl;
 
 		
-		// Many to One Target Recipe.class
-		@ManyToOne(targetEntity = Ingredients.class)
-		private Ingredients ingredients;
+		// One TO Many Target Recipe.class
+		@OneToMany(targetEntity = Ingredients.class, cascade = CascadeType.ALL)
+		@JoinColumn(name = "ingredients_id", referencedColumnName = "id" )
+		private List<Ingredients> ingredients;
 
 		// Database bit follows - Pay ATTENTION !!!
 //
