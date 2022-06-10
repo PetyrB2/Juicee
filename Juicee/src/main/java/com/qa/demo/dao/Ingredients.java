@@ -6,8 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-//import javax.persistence.JoinTable;
-//import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import lombok.Data;
@@ -36,8 +34,10 @@ public class Ingredients {
 	@Column(nullable = false)
 	private String imgUrl;
 	
-	// X REFERENCE FOR DATABSES - CATEGORY !
+	// X REFERENCE FOR DATABSES - CATEGORY ONE CATEGORY TO MANY INGREDIENTS !
+	//======Many to WHO  ( targetEntity = XXXXXX.class ) ?
 	@ManyToOne(targetEntity = Category.class)
+	// =====The field to link the 2 tables by ==== 
 	@JoinColumn(name = "category_id")
 	private Category category;
 
@@ -49,6 +49,11 @@ public class Ingredients {
 		this.imgUrl = imgUrl;
 		this.description = description;
 		this.category = category;
+	}
+
+	public void setCategory(long category_id, String category_name) {
+		// TODO Auto-generated method stub
+		
 	}
 
 //	@ManyToMany(targetEntity = Quantity.class)
