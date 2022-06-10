@@ -4,8 +4,11 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import com.qa.demo.dao.Ingredients;
 import com.qa.demo.persistence.repo.IngredientsRepo;
+//===================== Imports Above this line
 
+//===================== Includes Before Class
 @Service
+//===================== Includes Before Class
 public class IngredientsService {
 
 	private IngredientsRepo repo;

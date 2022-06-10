@@ -2,6 +2,7 @@ package com.qa.demo.persistence.repo;
 
 	import static org.assertj.core.api.Assertions.assertThat;
 
+import org.apache.catalina.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -48,4 +49,23 @@ import com.qa.demo.user.Role;
 			// Assertion by id not 0
 			assertThat(savedUser.getId()).isGreaterThan(0);
 		}
+		
+//		//TEST TO CREATE ROLES
+		@Test
+		public void testCreateRoles() {
+			Role roleAdmin = new Role("Administrator");
+			Role roleSupervisor = new Role("Supervisor");
+			Role roleVisitor = new Role("Visitor");
+		}
+		
+		// TEST TO SET ROLE TO USER
+//		@Test
+//		public void testAssignRole() {
+//			User user = repo.findById(1).get();
+//			Role roleVisitor = entityManager.find(Role.class, 2)
+//					user.addRole(roleVisitor);
+//		}
+		
+		
+		
 	}

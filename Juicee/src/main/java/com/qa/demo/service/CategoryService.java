@@ -3,11 +3,13 @@ package com.qa.demo.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.qa.demo.dao.Category;
 import com.qa.demo.persistence.repo.CategoryRepo;
-import com.qa.demo.user.Role;
 
+
+@CrossOrigin
 @Service
 public class CategoryService {
 

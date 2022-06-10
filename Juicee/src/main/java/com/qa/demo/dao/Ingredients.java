@@ -6,8 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+//import javax.persistence.JoinTable;
+//import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 //===================== Imports Above this line
@@ -18,9 +20,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 //Entity  <<<<IMPORTANT
 @Entity
-
-// ===================== BEGIN of Class
-
+//Cross Origin needed for JS
+@CrossOrigin
+//===================== Includes Before Class
 public class Ingredients {
 
 	// ATTRIBUTES PRIVATE
@@ -49,6 +51,10 @@ public class Ingredients {
 		this.category = category;
 	}
 
+//	@ManyToMany(targetEntity = Quantity.class)
+//	@JoinTable(name = "quantity_id", joinColumns = @JoinColumn(name = "quantity_id"))
+//	// Foreign Key
+//	private Quantity quantity;
 	// Getters & Setters Taken Care of By @Data (Included in Pom (Lombok)
 	// (springdoc)))
 }
