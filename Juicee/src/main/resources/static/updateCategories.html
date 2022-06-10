@@ -9,36 +9,7 @@
 	<!-- Bootstrap in the head-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
 		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-
-	<style>
-		hr {
-			display: block;
-			margin-top: 0.5em;
-			margin-bottom: 0.5em;
-			margin-left: auto;
-			margin-right: auto;
-			border-style: inset;
-			border-width: 1px;
-			width: 50%;
-		}
-
-		hr2 {
-			display: block;
-			margin-top: 0.5em;
-			margin-bottom: 0.5em;
-			margin-left: auto;
-			margin-right: auto;
-			border-style: inset;
-			border-width: 1px;
-			width: 70%;
-		}
-
-		textarea {
-			background: url(images/benice.png) center center no-repeat;
-			/* This ruins default border */
-			border: 1px solid #888;
-		}
-	</style>
+	<link rel="stylesheet" href="./assets/css/style.css" />
 
 	<title>Update a Category</title>
 </head>
@@ -48,6 +19,7 @@
 
 		<div class="container text-center">
 			<div>
+				<a href="index.html"><button type="button" class="btn btn-success">Main Page</button></a>
 				<hr>
 				<h1>Categories</h1>
 				<hr>
@@ -69,13 +41,13 @@
 								<br>
 								<input id="catid" placeholder="Update Category ID">
 								<input id="cats" placeholder="Update Category Name">
-								
+
 								<br>
 							</div>
 							<br>
 							<button name="button" id="submit" class="btn btn-success">Click to Update </button>
-							
-							
+
+
 							<button name="button2" id="refresh" class="btn btn-secondary">Refresh</button>
 						</div>
 						<br>

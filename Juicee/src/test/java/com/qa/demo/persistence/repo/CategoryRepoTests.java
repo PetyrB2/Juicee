@@ -29,7 +29,7 @@ public class CategoryRepoTests {
 	@Test
 	public void testCreateCategory() {
 		Category category = new Category();
-		category.setName("Fruit");
+		category.setName("Badgers");
 		// save the user using crud repository
 		Category savedCategory = repo.save(category);
 

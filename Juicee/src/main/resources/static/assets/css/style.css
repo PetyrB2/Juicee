@@ -1,36 +1,32 @@
-body {
 
 
--webkit-animation: colorchange 90s infinite;
-
-animation: colorchange 90s infinite;
-
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width: 50%;
 }
 
-@-webkit-keyframes colorchange {
-
-0% {background: #00FA9A; ##191970;}
-
-25% {background: blue; yellow;}
-
-50% {background: orange; yellow;}
-
-75% {background: #00FA9A;}
-
-100% {background: blue;}
-
+hr2 {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width: 70%;
 }
 
-@keyframes colorchange {
+img {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25%;
+    padding: 5px;
+    width: 250px;
 
-0% {background: 00FA9A;}
-
-25% {background: #bd8d52;}
-
-50% {background: blue;}
-
-75% {background: purple;}
-
-100% {background: 00FA9A;}
-}
 }

@@ -2,6 +2,7 @@
 // ===============================================================================
 
 const rootElement = document.getElementById('catlist');
+const rootElement2 = document.getElementById('Zebra');
 
 // ===============================================================================
 // ===============================================================================
@@ -82,9 +83,7 @@ function showAllFacts(data) {
         p.append(document.createTextNode(` Description: ${data[i][`description`]}  `));
         p.append(br3);
         p.append(document.createTextNode(` Cat Id: ${data[i][`category_id`]}  `));
-        p.append(br4);
-        p.append(document.createTextNode(` Category: ${data[i][`category_name`]}  `));
-        p.append(br5);
+    
         
         // p.append(document.createTextNode(` Image URL: ${data[i][`imgUrl`]} `));
         p.append(hr2);

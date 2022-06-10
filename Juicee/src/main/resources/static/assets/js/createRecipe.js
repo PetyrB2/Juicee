@@ -35,7 +35,7 @@ function postData() {
 //   console.log(categories);
 
     //Fetch command to POST 
-    fetch("http://localhost:8080/Ingredients/create", { //location of db
+    fetch("http://localhost:8080/Recipe/create", { //location of db
         method: 'post', // our method
         headers: {
             "Content-type": "application/json" //content type to post
@@ -61,7 +61,7 @@ function postData() {
 
 // Function to GET CATEGORIES from the db
 function fetchCats() {
-    fetch('http://localhost:8080/Category/read')
+    fetch('http://localhost:8080/Recipe/read')
         .then((resp) => {
             if (resp.status != 200) console.error(resp.status);
             resp.json().then((data) => {
@@ -143,46 +143,6 @@ function showAllFacts(data) {
         rootElement.appendChild(newDiv);
     }
 }
-
-
-// FETCH TO ADD CATS TO LIST
-
-// // Function to GET CATEGORIES from the db
-// function fetchMoreCats() {
-//     fetch('http://localhost:8080/Category/read')
-//         .then((resp) => {
-//             if (resp.status != 200) console.error(resp.status);
-//             resp.json().then((data) => {
-//                 console.log(data)
-//                 showAllMoreCats(data)
-
-//             })
-//         });
-// }
-
-// function showAllMoreCats(data) {
-//     console.table(data)
-   
-    
-//     for (let i = 0; i < data.length; i++) {
-
-//         // CONSTANTS
-//         const rootElement = document.getElementsByClassName('root')[0];
-//         const newDiv = document.createElement('div');
-//         const p = document.createElement('p');
-//         const br = document.createElement('br');
-//         const br2 = document.createElement('br');
-
-//         p.append(document.createTextNode(`Category ID: ${data[i][`id`]}  `));
-//         p.append(br);
-//         p.append(document.createTextNode(`Category Name: ${data[i][`name`]}  `));
-//         p.append(br2);
-
-
-//         newDiv.appendChild(p);
-//         rootElement.appendChild(newDiv);
-//     }
-// }
 // ===================>>>>   RUN COMMANDS --- CAREFUL OF THE ORDER !!! <<<<=============================
 fetchData()
 
